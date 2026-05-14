@@ -21,27 +21,34 @@ public class Main {
             productRepositoryImpl.findAll();
 
         try {
-            Product productById = productRepositoryImpl.findById(1);
             System.out.println("------------------------------------");
             System.out.println("Displaying by Id(productById)");
+            int id=ProductUtil.getInt("Enter id : ");
+            Product productById = productRepositoryImpl.findById(id);
             System.out.println(productById);
         }catch (ProductNotFoundException e){
         System.out.println(e.getMessage());
     }
     try {
-        Product updatedProduct = new Product(1, "Laptop", 100000);
-        Product product1 = productRepositoryImpl.update(updatedProduct);
         System.out.println("------------------------------------");
         System.out.println("Updating a product");
+        int id=ProductUtil.getInt("Enter id : ");
+        String name=ProductUtil.getString("Enter product name : ");
+        int price=ProductUtil.getInt("Enter price : ");
+        Product updatedProduct = new Product(id,name,price);
+        Product product1 = productRepositoryImpl.update(updatedProduct);
         System.out.println(product1);
     }catch (ProductNotFoundException e){
         System.out.println(e.getMessage());
     }
 
     try {
-        productRepositoryImpl.delete(new Product(4, "AC", 10000));
         System.out.println("------------------------------------");
         System.out.println("Deleting a product and displaying remaining products");
+        int id=ProductUtil.getInt("Enter id : ");
+        String name=ProductUtil.getString("Enter product name : ");
+        int price=ProductUtil.getInt("Enter price : ");
+        productRepositoryImpl.delete(new Product(id,name,price));
         productRepositoryImpl.findAll();
     }catch (ProductNotFoundException e){
         System.out.println(e.getMessage());
@@ -51,6 +58,7 @@ public class Main {
     try {
         System.out.println("------------------------------------");
         System.out.println("Deleting product by id");
+        int id=ProductUtil.getInt("Enter id : ");
         productRepositoryImpl.deleteById(3);
         productRepositoryImpl.findAll();
     } catch (ProductNotFoundException e){
