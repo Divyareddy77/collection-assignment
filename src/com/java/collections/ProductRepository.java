@@ -7,5 +7,6 @@ public interface ProductRepository {
     Product update(Product product) throws ProductNotFoundException;
     void delete(Product product) throws ProductNotFoundException;
     void deleteById(int id) throws ProductNotFoundException;
+    Product getProductByCompany(String company);
 
 }

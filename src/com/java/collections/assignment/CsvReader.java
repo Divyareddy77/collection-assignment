@@ -1,15 +1,12 @@
 package com.java.collections.assignment;
 
-import com.sun.source.tree.BreakTree;
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class csvReader {
+public class CsvReader {
     public List<Product> getDataFromCsv(){
         List<Product> products=new ArrayList<>();
         try{
@@ -27,6 +24,7 @@ public class csvReader {
                 product.setCompany(data[5]);
                 product.setCategory(data[6]);
                 product.setManufacturedYear(Integer.parseInt(data[7]));
+                product.setRating(Float.parseFloat(data[8]));
                 products.add(product);
                 productData=br.readLine();
             }

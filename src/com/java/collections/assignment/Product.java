@@ -11,6 +11,15 @@ public class Product {
     private String company;
     private String category;
     private int manufacturedYear;
+    private float rating;
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
 
     public Product() {
     }
@@ -102,6 +111,7 @@ public class Product {
                 ", company='" + company + '\'' +
                 ", category='" + category + '\'' +
                 ", manufacturedYear=" + manufacturedYear +
+                ", rating=" + rating +
                 '}';
     }
 }

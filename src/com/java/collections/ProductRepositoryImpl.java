@@ -71,4 +71,12 @@ public class ProductRepositoryImpl implements ProductRepository {
         }
         throw new ProductNotFoundException("Product not found");
     }
+
+    @Override
+    public Product getProductByCompany(String company) {
+        for(Product product:productList){
+
+        }
+        return null;
+    }
 }
