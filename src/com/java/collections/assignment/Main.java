@@ -7,7 +7,7 @@ public class Main {
         CsvReader csvReader=new CsvReader();
         ProductRepositoryImpl productService=new ProductRepositoryImpl(csvReader);
         System.out.println(productService.getAllProducts());
-        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("======================================================================");
         Product product=new Product();
         product.setId(51);
         product.setName("TV");
@@ -20,13 +20,13 @@ public class Main {
         product.setRating(4.3f);
         productService.addProduct(product);
         System.out.println(productService.getAllProducts());
-        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("=========================================================================");
         productService.deleteProduct(product);
         System.out.println(productService.getAllProducts());
-        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("===========================================================================");
         productService.deleteById(50);
         System.out.println(productService.getAllProducts());
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("=============================================================================");
         Product product1=new Product();
         product1.setId(1);
         product1.setName("TV");
@@ -39,11 +39,11 @@ public class Main {
         product1.setRating(4.3f);
         productService.updateProduct(product1);
         System.out.println(productService.getAllProducts());
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("===============================================================================");
         List<Product> productByCompany = productService.getProductByCompany("Apple");
         System.out.println(productByCompany);
         List<Product> productBtCategory=productService.getProductsByCategory("electronics");
-        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("=================================================================================");
         System.out.println(productBtCategory);
         List<Product> minRatingProducts=productService.getProductsByMinRating();
         System.out.println("================================================================================");
@@ -60,6 +60,11 @@ public class Main {
         List<Product> availabilityAndCategory=productService.getByAvailabilityAndCategory("Accessories");
         System.out.println("=====================================================================================");
         System.out.println(availabilityAndCategory);
+        System.out.println("=====================================================================================");
+        // Date and time practice
+       /* ProductRepositoryImpl productRepositoryImpl=new ProductRepositoryImpl(csvReader);
+        productRepositoryImpl.dateOfProductManufactured();
+*/
 
     }
 }
